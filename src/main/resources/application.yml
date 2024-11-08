@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: clientorder
+  config:
+    import: "optional:configserver:"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /manage
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
